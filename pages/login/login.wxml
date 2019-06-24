@@ -1,0 +1,15 @@
+ <view class='content'>
+    <view class='loginByPhone'>
+      <form bindsubmit='login'>
+        <view class='sendCode'>
+          <input class='phone' style='width:200px;' type='number' placeholder='手机号' name='phone' bindblur='checkPhone'></input>
+          <button style='font-size:14px;height:40px;right:15px;' bindtap='sendCode' disabled='{{disabled1}}'>{{tip}}</button>
+        </view>
+        <view>
+          <input class='getCode' type='text' placeholder='短信验证码' name="code"></input>
+        </view>
+        <button form-type='submit' class='submit' disabled='{{disabled}}'>绑定</button>
+        <text style='font-size:14px;'>绑定既视为同意<text style='color:red;text-decoration:underline;'>《豆豆音乐用户协议》</text></text>
+      </form>
+    </view>
+  </view>

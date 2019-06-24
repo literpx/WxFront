@@ -1,0 +1,29 @@
+<view class='shareList'>
+  <block wx:for='{{shareList}}'>
+    <view class='shareItem'>
+      <view class='item-left'><image src='{{item.avatarUrl}}' style='width:50px;height:50px;'></image></view>
+      <view class='item-right'>
+      <view class='user'><text>{{item.username}}</text></view>
+      <view class='content'><text>{{item.content}}</text></view>
+      <view class='song'>
+        <view><image src='{{item.pic_radio}}' style='width:60px;height:60px;'></image></view>
+        <view class='song-info'>
+          <view class='songName' bindtap='gotoSong' data-song_id='{{item.song_id}}' data-song_src='{{item.show_link}}'><text>{{item.title}}</text></view>
+          <view  class='authore' data-author='{{item.ting_uid}}'  bindtap='getAuthorSong'><text>{{item.author}}</text></view>
+        </view>
+         <view class='play' >
+          <block wx:if='{{isPlat&&songId==item.song_id}}'>
+         <image src='/images/song/stop.png' style='width:40px;height:40px;' bindtap='stopPlay' data-song_id='{{item.song_id}}'></image>
+         </block>
+         <block wx:else>
+          <image src='/images/song/play.png' style='width:40px;height:40px;'  bindtap='audioPlay' data-song_id='{{item.song_id}}'></image>
+         </block>
+         </view>
+      </view>
+      <view class='time'><text>{{item.date}}</text></view>
+      </view>
+    </view>
+    <view class='hr'></view>
+    
+  </block>
+</view>

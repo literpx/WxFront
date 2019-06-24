@@ -1,0 +1,29 @@
+<scroll-view scroll-y="true" style='height:{{winHeight}}px;' bindscrolltolower='doGetMore'>
+  <view class='songList'>
+    <block wx:for='{{songList}}'>
+      <view data-songId='{{item.song_id}}' class="{{songId==item.song_id?'list-select':'list-normal'}}">
+        <view class='item-info'>
+          <view class='item-name'>
+            <text>{{item.album_title}}</text>
+          </view>
+          <view class='item-author'>
+            <text>{{item.author}}</text>
+          </view>
+        </view>
+        <view class='item-play'>
+          <block wx:if='{{isPlat&&songId==item.song_id}}'>
+            <image src='/images/songer/noplay.png' bindtap='stopPlay' data-song_id='{{item.song_id}}'></image>
+          </block>
+          <block wx:else>
+            <image src='/images/songer/play2.png' bindtap='audioPlay' data-song_id='{{item.song_id}}'></image>
+          </block>
+
+        </view>
+        <view class='item-more' data-song_id='{{item.song_id}}' >
+          <image src='/images/songer/more.png'></image>
+        </view>
+      </view>
+      <view class='hr2'></view>
+    </block>
+  </view>
+</scroll-view>

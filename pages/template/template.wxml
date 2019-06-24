@@ -1,0 +1,48 @@
+<template name='meHead_isuser'>
+  <view class='amountBg'>
+    <view class='img'>
+      <image src='{{userInfo.avatarUrl}}' style='height:47px;width:49px'></image>
+    </view>
+    <view class='account'>
+      <view style='font-size:16px'>{{userInfo.nickName}}</view>
+    </view>
+    <view class='nav'>></view>
+  </view>
+</template>
+
+<template name='meHead_nouser'>
+  <view class='amountBg'>
+    <view class='img'>
+      <image src='../../images/me/myinfo.png' style='height:47px;width:49px'></image>
+    </view>
+    <view class='account'>
+      <view>请先登录</view>
+    </view>
+    <view class='nav'>></view>
+  </view>
+</template>
+
+<template name='isLogin'>
+  <view class='content'>
+    <button style='width:80%' class='exitLogin' bindtap='exitLogin'>退出登录</button>
+  </view>
+</template>
+
+<template name="noLogin">
+  <view class='content'>
+    <button open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo" type='primary' style='width:80%'>微信一键登录</button>
+    <view class='loginByPhone'>
+      <form bindsubmit='login'>
+        <view class='sendCode'>
+          <input class='phone' style='width:200px;' type='number' placeholder='手机号' name='phone' bindblur='checkPhone'></input>
+          <button style='font-size:14px;height:40px;right:15px;' bindtap='sendCode'>{{tip}}</button>
+        </view>
+        <view>
+          <input class='getCode' type='text' placeholder='短信验证码' name="code"></input>
+        </view>
+        <button form-type='submit' class='submit' disabled='{{disabled}}'>手机登录</button>
+        <text style='font-size:14px;'>登录既视为同意<text style='color:red;text-decoration:underline;'>《豆豆音乐用户协议》</text></text>
+      </form>
+    </view>
+  </view>
+</template>

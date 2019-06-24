@@ -1,0 +1,49 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/discover/discover",
+    "pages/playlist/playlist",
+    "pages/me/me",
+    "pages/template/template",
+    "pages/login/login",
+    "pages/songer/songer",
+    "pages/search/search",
+    "pages/latelyPlay/latelyPlay",
+    "pages/song/song",
+    "pages/edit/edit"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "豆豆音乐",
+    "navigationBarTextStyle":"#fff"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "主页",
+        "iconPath": "images/bar/index0.png",
+        "selectedIconPath": "images/bar/index1.png"
+      },
+      {
+        "pagePath": "pages/discover/discover",
+        "text": "发现",
+        "iconPath": "images/bar/faxian0.png",
+        "selectedIconPath": "images/bar/faxian1.png"
+      },
+      {
+        "pagePath": "pages/playlist/playlist",
+        "text": "歌单",
+        "iconPath": "images/bar/music0.png",
+        "selectedIconPath": "images/bar/music1.png"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "text": "我的",
+        "iconPath": "images/bar/me0.png",
+        "selectedIconPath": "images/bar/me1.png"
+      }
+    ]
+  }
+}

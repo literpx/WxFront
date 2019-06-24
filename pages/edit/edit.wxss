@@ -1,0 +1,78 @@
+/* pages/edit/edit.wxss */
+.content{
+  width: 100%
+}
+.textarea{
+  height: 150px;
+  width: 100%;
+  padding: 5px 10px;
+}
+.placeholde{
+  font-family: "微软雅黑";
+  color: rgb(122, 108, 87);
+  margin-left: 10px;
+}
+.song{
+  margin-top: 5px;
+  display: flex;
+  flex-direction: row;
+   width: 95%;
+   height: 60px;
+   padding: 5px 5px;
+   position: relative;
+   margin-left: 10px;
+}
+.song-info{
+  display: flex;
+  flex-direction: column;
+   margin-left: 10px;
+  width: 80%;
+  height:60px;
+  justify-content: space-around
+  
+}
+.songName{
+  font-size: 16px;
+color: rgb(97, 92, 139);
+width: 100%;
+   word-break:keep-all;
+  white-space:nowrap;
+  overflow:hidden;
+}
+ .authore{
+   font-size: 15px; 
+    color: rgb(114, 88, 52)
+}
+.play{
+  position: absolute;
+  left: 15px;
+  top:15px;
+  z-index: 999
+}
+.local{
+  height: 50px;
+  line-height: 50px;
+  vertical-align: middle;
+
+}
+.local image{
+  margin-left: 20px;
+  width:30px;
+  height:30px;
+ top: 10px;
+}
+.local text{
+  margin-left: 20px;
+}
+.send button{
+  color:rgb(8, 255, 62);
+  height:50px;
+  background-color: #fff;
+  border: none
+}
+.hr{
+  width: 100%;
+  height: 1px;
+  opacity: 0.3;
+  background-color: #222
+}

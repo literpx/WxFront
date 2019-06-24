@@ -1,0 +1,164 @@
+/*搜索*/
+.search{
+  position: relative;
+  background-color: rgb(165, 91, 91);
+  width: 100%;
+  height: 50px;
+}
+.search input{
+  background-color: #fff;
+  color: #000;
+  width: 80%;
+  height: 40px;
+  line-height: 40px;
+  font-size: 14px;
+  border-radius: 5px;
+  text-align: center;
+  margin: 0 auto
+}
+.search view image{
+  width: 35px;
+  height:35px;
+  position: absolute;
+  top: 2px;
+  right: 11%;
+  z-index: 9999
+}
+.songList{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.nav{
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
+  justify-content: space-around
+}
+.select{
+  width: 25%;
+  height: 45px;
+  line-height: 45px;
+  text-align: center;
+  color: rgb(165, 91, 91);
+  font-size: 18px;
+  border-bottom: 2px solid rgb(165, 91, 91);
+}
+.normal{
+  width: 25%;
+  height: 45px;
+  line-height: 45px;
+  text-align: center;
+  color: #333;
+  font-size: 16px;
+}
+
+/*渲染内容*/
+.songList{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.list-select{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-top: 5px;
+  height: 70px;
+  border-left: 5px solid rgb(165, 91, 91);
+  margin-left: 0px;
+}
+.list-normal{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-top: 5px;
+  height: 70px;
+  margin-left: 5px;
+}
+.list-select .item-info,.list-normal .item-info{
+  display: flex;
+  flex-direction: column;
+  width: 65%;
+  margin-left: 15px;
+  margin-top: 5px;
+}
+.list-select .item-info .item-name,.list-normal .item-info .item-name{
+  font-size: 18px;
+  word-break:keep-all;
+  white-space:nowrap;
+  overflow:hidden;
+}
+.list-select .item-info .item-author,.list-normal .item-info .item-author{
+  font-size: 16px;
+  margin-top:10px;
+   word-break:keep-all;
+  white-space:nowrap;
+  overflow:hidden;
+}
+.list-select .item-play,.list-normal .item-play{
+margin-left: 20px;
+ margin-top: 20px
+}
+.list-select .item-more,.list-normal .item-more{
+ margin-left: 20px;
+ margin-top: 20px
+}
+.list-select  image,.list-normal  image{
+  width: 25px;
+  height: 25px;
+}
+.hr2{
+  width: 100%;
+  height: 1px;
+  background-color: rgb(165, 91, 91);
+  opacity: 0.2;
+}
+
+/*歌手*/
+.artist{
+  display: flex;
+  flex-direction: column;
+}
+.artist .artist-item{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 80px;
+  padding-left: 10px;
+  vertical-align: middle;
+  position: relative;
+  margin-top: 10px;
+}
+.artist-item-author{
+   display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+   height: 70px;
+  margin-left: 20px;
+   width: 65%;
+   
+}
+.artist-more{
+  font-size: 46px;
+  position: absolute;
+  top: 0px;
+  right: 20px;
+}
+
+
+/*专辑*/
+.album-item{
+  display: flex;
+  flex-direction: row;
+  width: 65%;
+  height: 70px;
+  padding-left: 10px;
+}
+.album-item-info{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 60px;
+  margin-left: 20px
+}

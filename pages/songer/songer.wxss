@@ -1,0 +1,302 @@
+/* pages/songer/songer.wxss */
+.authorInfo{
+  width: 100%;
+  height:250px;
+  position: relative
+}
+.aothorImg image{
+  opacity: 0.9;
+  width: 100%;
+  height:250px;
+}
+.centent{
+  width: 100%;
+    position: absolute;
+    top: 60%;
+    color: #fff;
+    text-align: center;
+    animation: change 8s linear 3s infinite;
+
+}
+@keyframes change{
+  0%{
+    color: #fff
+  }
+  50%{
+    color: #000;
+  }
+  100%{
+    color: #fff
+  }
+}
+.songerName{
+  letter-spacing:5px;
+  font-size: 20px;
+}
+.hot,.face{
+  font-size: 14px;
+}
+.hot{
+  height: 30px;
+  line-height: 30px;
+  vertical-align: middle
+}
+.hot image{
+vertical-align: middle
+}
+.listenBtn{
+  width: 80px;
+  height: 30px;
+  border: 1px solid rgb(64, 226, 0);
+  background-color: rgba(0, 0, 0, 0);
+  color: #fff;
+  border-radius: 10px;
+  position: absolute;
+  right: 10px;
+  top:30px;
+}
+
+/*搜索*/
+.search{
+  position: relative;
+  background-color: #eee;
+  width: 100%;
+  height: 50px;
+  padding-top: 2px;
+}
+.search input{
+  background-color: #fff;
+  color: #000;
+  width: 80%;
+  height: 40px;
+  line-height: 40px;
+  font-size: 14px;
+  border-radius: 5px;
+  text-align: center;
+  margin-left: 35px;
+  margin-top: 4px;
+}
+.search view image{
+  width: 35px;
+  height:35px;
+  position: absolute;
+  top: 5px;
+  right: 11%;
+}
+
+/*歌曲列表导航*/
+.nav{
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
+}
+.select{
+  width: 25%;
+  height: 45px;
+  line-height: 45px;
+  text-align: center;
+  color: rgb(0, 243, 32);
+  font-size: 18px;
+  border-bottom: 2px solid rgb(58, 247, 0);
+}
+.normal{
+  width: 25%;
+  height: 45px;
+  line-height: 45px;
+  text-align: center;
+  color: #333;
+  font-size: 16px;
+}
+
+/*列表内容*/
+.playType{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-top: 3px;
+}
+.playType .playTypeBtn image{
+  width:35px;
+  height:35px;
+  margin-left: 15px;
+}
+.playType .platTypeOrder image{
+  width:35px;
+  height:28px;
+margin-left: 10px;
+}
+.playType .platTypeText {
+  width: 70%;
+  height: 35px;
+  line-height: 35px
+}
+.playType .platTypeText text{
+  margin-left: 15px;
+  vertical-align: middle
+  
+}
+.hr1{
+  width: 100%;
+  height: 1px;
+  background-color: #000;
+  opacity: 0.7;
+}
+.hr2{
+  width: 100%;
+  height: 1px;
+  background-color: #000;
+  opacity: 0.2;
+}
+.songList{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.list-select{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-top: 5px;
+  height: 70px;
+  border-left: 5px solid rgb(43, 158, 9);
+}
+.list-normal{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-top: 5px;
+  height: 70px;
+  margin-left: 5px;
+}
+.list-select .item-info,.list-normal .item-info{
+  display: flex;
+  flex-direction: column;
+  width: 65%;
+  margin-left: 10px;
+  margin-top: 5px;
+  height: 60px;
+}
+.list-select .item-info .item-name,.list-normal .item-info .item-name{
+  font-size: 18px;
+   word-break:keep-all;
+  white-space:nowrap;
+  overflow:hidden;
+}
+.list-select .item-info .item-author,.list-normal .item-info .item-author{
+  font-size: 16px;
+  margin-top:10px;
+   word-break:keep-all;
+  white-space:nowrap;
+  overflow:hidden;
+}
+
+.list-select .item-play,.list-normal .item-play{
+margin-left: 20px;
+ margin-top: 20px
+}
+.list-select .item-more,.list-normal .item-more{
+ margin-left: 20px;
+ margin-top: 20px
+}
+.list-select  image,.list-normal  image{
+  width: 25px;
+  height: 25px;
+}
+
+/*歌手详细信息*/
+.detailInfo{
+  width: 100%;
+}
+.infoTop{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding-left: 20px;
+}
+.detailInfo-img image{
+   width: 150px;
+ height: 150px;
+ border-radius: 75px;
+}
+
+/*右边详细信息*/
+.detailInfo-right{
+  margin-left: 10px;
+  width: 50%;
+}
+.right-top{
+   margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  font-size: 20;
+}
+.detailInfo-right-hot{
+  margin-top: 10px;
+  font-size: 18;
+   text-align: center
+}
+.detailInfo-right-birth{
+   margin-top: 20px;
+   font-size: 16;
+   text-align: center;
+   color: #444
+}
+
+/*详细信息中间按钮*/
+.infoCenter{
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 50px;
+  margin-top: 10px;
+}
+.detailInfo-like{
+  width: 150px;
+  height: 40px;
+  line-height: 40px;
+  vertical-align: middle;
+   border: 1px solid rgb(255, 0, 0);
+  background-color: rgba(0, 0, 0, 0);
+  color: rgb(255, 0, 0);
+  border-radius: 15px;
+}
+.detailInfo-play{
+  width: 150px;
+  height: 40px;
+  background-color: rgba(255, 0, 0, 1);
+  color: #fff;
+  border-radius: 10px;
+  line-height: 40px;
+  vertical-align: middle;
+}
+.detailInfo-like image,.detailInfo-play image{
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+  margin-top: 8px;
+}
+.detailInfo-play text{
+  font-size: 14px;
+  font-weight: bold;
+  float: right;
+  vertical-align: middle;
+  margin-right: 13px;
+  letter-spacing:2px;
+}
+.detailInfo-like text{
+  font-size: 14px;
+  font-weight: bold;
+  float: right;
+  letter-spacing:5px;
+  vertical-align: middle;
+  margin-right: 35px;
+}
+
+.infoBottom{
+  width: 92%;
+  padding: 10px 10px;
+  font-size: 16px;
+}
+

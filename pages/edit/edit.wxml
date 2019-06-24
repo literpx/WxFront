@@ -1,0 +1,20 @@
+<view class='content'>
+<form bindsubmit='sendShare'>
+  <view class='textarea'><textarea placeholder='这一刻的想法...' focus='true' maxlength='100' placeholder-class='placeholde' name='content'></textarea></view>
+  <view class='song'>
+        <view><image src='{{songInfo.pic}}' style='width:60px;height:60px;'></image></view>
+        <view class='song-info'>
+          <view><text class='songName'>{{songInfo.title}}</text></view>
+          <view><text class='authore'>{{songInfo.author}}</text></view>
+        </view>
+         <view class='play'><image src='/images/song/play.png' style='width:40px;height:40px;'></image></view>
+      </view>
+  <view class='hr'></view>
+  <view class='local'> <image src='/images/local.png' ></image>
+    <text>所在位置</text>
+  </view>
+  <view class='hr'></view>
+  <view class='send'><button form-type='submit'>发送</button></view>
+   <view class='hr'></view>
+   </form>
+</view>

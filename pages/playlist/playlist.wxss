@@ -1,0 +1,230 @@
+.noLogin{
+  height: 500px;
+  width: 100%;
+  text-align: center
+}
+.noLogin view{
+  margin: 50px auto;
+  font-size: 18px;
+}
+.nav{
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
+  justify-content: space-around
+}
+.select{
+  width: 25%;
+  height: 45px;
+  line-height: 45px;
+  text-align: center;
+  color: rgb(165, 91, 91);
+  font-size: 18px;
+  border-bottom: 2px solid rgb(165, 91, 91);
+}
+.normal{
+  width: 25%;
+  height: 45px;
+  line-height: 45px;
+  text-align: center;
+  color: #333;
+  font-size: 16px;
+}
+
+
+/*列表内容*/
+.playType{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-top: 3px;
+}
+.playType .playTypeBtn image{
+  width:35px;
+  height:35px;
+  margin-left: 15px;
+}
+.playType .platTypeOrder image{
+  width:35px;
+  height:28px;
+margin-left: 10px;
+}
+.playType .platTypeText {
+  width: 70%;
+  height: 35px;
+  line-height: 35px
+}
+.playType .platTypeText text{
+  margin-left: 15px;
+  vertical-align: middle
+  
+}
+.hr1{
+  width: 100%;
+  height: 1px;
+  background-color: #000;
+  opacity: 0.7;
+}
+.hr2{
+  width: 100%;
+  height: 1px;
+  background-color: #000;
+  opacity: 0.2;
+}
+.songList{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.list-select{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-top: 5px;
+  height: 70px;
+  border-left: 5px solid rgb(165, 91, 91);
+}
+.list-normal{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-top: 5px;
+  height: 70px;
+  margin-left: 5px;
+}
+.list-select .item-info,.list-normal .item-info{
+  display: flex;
+  flex-direction: column;
+  width: 65%;
+  margin-left: 10px;
+  margin-top: 5px;
+  height: 60px;
+}
+.list-select .item-info .item-name,.list-normal .item-info .item-name{
+  font-size: 18px;
+   word-break:keep-all;
+  white-space:nowrap;
+  overflow:hidden;
+}
+.list-select .item-info .item-author,.list-normal .item-info .item-author{
+  font-size: 16px;
+  margin-top:10px;
+   word-break:keep-all;
+  white-space:nowrap;
+  overflow:hidden;
+}
+.list-select .item-like,.list-normal .item-like{
+ margin-top: 20px
+}
+.list-select .item-play,.list-normal .item-play{
+margin-left: 13px;
+ margin-top: 20px
+}
+.list-select .item-more,.list-normal .item-more{
+ margin-left: 13px;
+ margin-top: 20px
+}
+.list-select  image,.list-normal  image{
+  width: 25px;
+  height: 25px;
+}
+
+/*歌手详细信息*/
+.detailInfo{
+  width: 100%;
+}
+.infoTop{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding-left: 20px;
+}
+.detailInfo-img image{
+   width: 150px;
+ height: 150px;
+ border-radius: 75px;
+}
+
+/*右边详细信息*/
+.detailInfo-right{
+  margin-left: 10px;
+  width: 50%;
+}
+.right-top{
+   margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  font-size: 20;
+}
+.detailInfo-right-hot{
+  margin-top: 10px;
+  font-size: 18;
+   text-align: center
+}
+.detailInfo-right-birth{
+   margin-top: 20px;
+   font-size: 16;
+   text-align: center;
+   color: #444
+}
+
+/*详细信息中间按钮*/
+.infoCenter{
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 50px;
+  margin-top: 10px;
+}
+.detailInfo-like{
+  width: 150px;
+  height: 40px;
+  line-height: 40px;
+  vertical-align: middle;
+   border: 1px solid rgb(255, 0, 0);
+  background-color: rgba(0, 0, 0, 0);
+  color: rgb(255, 0, 0);
+  border-radius: 15px;
+}
+.detailInfo-play{
+  width: 150px;
+  height: 40px;
+  background-color: rgba(255, 0, 0, 1);
+  color: #fff;
+  border-radius: 10px;
+  line-height: 40px;
+  vertical-align: middle;
+}
+.detailInfo-like image,.detailInfo-play image{
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+  margin-top: 8px;
+}
+.detailInfo-play text{
+  font-size: 14px;
+  font-weight: bold;
+  float: right;
+  vertical-align: middle;
+  margin-right: 13px;
+  letter-spacing:2px;
+}
+.detailInfo-like text{
+  font-size: 14px;
+  font-weight: bold;
+  float: right;
+  letter-spacing:5px;
+  vertical-align: middle;
+  margin-right: 35px;
+}
+
+.infoBottom{
+  width: 92%;
+  padding: 10px 10px;
+  font-size: 16px;
+}
+
+
+

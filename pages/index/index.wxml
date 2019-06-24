@@ -1,0 +1,104 @@
+<view class="head">
+  <view class='search'>
+    <input type='text' placeholder='oO搜索Oo' bindblur='getSearchText'></input>
+    <view>
+      <image src="/images/index/search.png" bindtap='doSearch'></image>
+    </view>
+  </view>
+  <view class='advertising'>
+    <swiper indicator-dots='{{indicatorDots}}' autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" style="height:200px;border-radius: 5px;">
+      <block wx:for="{{advertisingImg}}">
+        <swiper-item>
+          <image src='{{item.src}}' style="width:100%;heigth:100%;" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+</view>
+<view class='center' style='height:{{winHeight}}px'>
+  <view class='nav'>
+    <view id="0" class="{{currentTab==0?'select':'normal'}}" bindtap='switchNav'>新歌榜</view>
+    <view class='line'>|</view>
+    <view id="1" class="{{currentTab==1?'select':'normal'}}" bindtap='switchNav'>热歌榜</view>
+    <view class='line'>|</view>
+    <view id="2" class="{{currentTab==2?'select':'normal'}}" bindtap='switchNav'>更多</view>
+    
+  </view>
+  <swiper current='{{currentTab}}' bindchange='swiperChange' style='height:{{winHeight-50}}px'>
+    <swiper-item>
+      <scroll-view scroll-y="true" style='height:{{winHeight-50}}px;' bindscrolltolower='doGetMore'>
+        <view class='swiper-item-head'>
+          <view class='item-head'>新歌推荐</view>
+          <view class='item-more' bindtap='getNewMore'>更多>></view>
+        </view>
+
+        <view class='swiper-item-content'>
+          <block wx:for='{{songList}}'>
+            <view class="{{songId==item.song_id?'audio-item-select':'audio-item-normal'}}">
+              <view  bindtap='gotoSong' data-song_id='{{item.song_id}}'>
+                <image src='{{item.pic_big}}' style='width:70px;height:70px'></image>
+              </view>
+              <view class='song-content'>
+                <view  bindtap='gotoSong' data-song_id='{{item.song_id}}'>
+                  <text class='song-name'>{{item.title}}</text>
+                </view>
+                <view>
+                  <text class='song-author' data-author='{{item.ting_uid}}' bindtap='getAuthorSong'>{{item.author}}</text>
+                </view>
+              </view>
+              <view class='play-btn-right'>
+                <block wx:if='{{isPlat&&songId==item.song_id}}'>
+                  <image src='/images/index/stop.png' style='width:40px;height:40px' bindtap='stopPlay' data-song_id='{{item.song_id}}'></image>
+                </block>
+                <block wx:else>
+                  <image src='/images/index/start.png' style='width:40px;height:40px' bindtap='audioPlay' data-song_id='{{item.song_id}}'></image>
+                </block>
+              </view>
+            </view>
+            <view class='hr'></view>
+          </block>
+        </view>  
+      </scroll-view>
+     
+    </swiper-item>
+    
+    <swiper-item>
+      <scroll-view scroll-y="true" style='height:{{winHeight-50}}px;' bindscrolltolower='doGetMore'>
+        <view class='swiper-item-head'>
+          <view class='item-head'>新歌推荐</view>
+          <view class='item-more' bindtap='getNewMore'>更多>></view>
+        </view>
+
+        <view class='swiper-item-content'>
+          <block wx:for='{{hotSongList}}'>
+            <view  class="{{songId==item.song_id?'audio-item-select':'audio-item-normal'}}">
+              <view>
+                <image src='{{item.pic_big}}' style='width:70px;height:70px'></image>
+              </view>
+              <view class='song-content'>
+                <view>
+                  <text class='song-name'>{{item.title}}</text>
+                </view>
+                <view>
+                  <text class='song-author' data-author='{{item.ting_uid}}' bindtap='getAuthorSong'>{{item.author}}</text>
+                </view>
+              </view>
+              <view class='play-btn-right'>
+                <block wx:if='{{isPlat&&songId==item.song_id}}'>
+                  <image src='/images/index/stop.png' style='width:40px;height:40px' bindtap='stopPlay' data-song_id='{{item.song_id}}'></image>
+                </block>
+                <block wx:else>
+                  <image src='/images/index/start.png' style='width:40px;height:40px' bindtap='audioPlay' data-song_id='{{item.song_id}}'></image>
+                </block>
+              </view>
+            </view>
+            <view class='hr'></view>
+          </block>
+        </view>  
+      </scroll-view>
+    </swiper-item>
+    <swiper-item>
+      <view>更多内容</view>
+    </swiper-item>
+  </swiper>
+</view>

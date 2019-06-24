@@ -1,0 +1,135 @@
+<view class='authorInfo'>
+  <view class='aothorImg'>
+    <image src='{{songerInfo.avatar_s500}}'></image>
+  </view>
+  <view class='centent'>
+    <view class='songerName'>
+      <text>{{songerInfo.name}}</text>
+    </view>
+    <view class='hot'>
+      <image src='/images/songer/hot.png' style='height:30px;width:30px'></image>
+      <text> {{songerInfo.hot}}</text>
+    </view>
+    <view class='face'>
+      <text>{{songerInfo.listen_num}} 粉丝 </text>
+      <image src='/images/songer/tip0.png' style='height:25px;width:25px'></image>
+    </view>
+    <view class='listenBtn'>关注</view>
+  </view>
+</view>
+<view class='search'>
+  <input type='text' placeholder='搜索次歌手的歌曲'></input>
+  <view>
+    <image src="/images/index/search.png"></image>
+  </view>
+</view>
+<view class='songList'>
+  <view class='nav'>
+    <view id="0" class="{{currentTab==0?'select':'normal'}}" bindtap='switchNav'>歌曲 {{songs_total}}</view>
+    <view id="1" class="{{currentTab==1?'select':'normal'}}" bindtap='switchNav'>专辑 {{albums_total}}</view>
+    <view id="2" class="{{currentTab==2?'select':'normal'}}" bindtap='switchNav'>MV {{mv_total}}</view>
+    <view id="3" class="{{currentTab==3?'select':'normal'}}" bindtap='switchNav'>个人信息</view>
+  </view>
+  <swiper current='{{currentTab}}' bindchange='swiperChange' style='height:{{winHeight-50}}px'>
+    <swiper-item>
+      <view class='playType'>
+        <view class='playTypeBtn'>
+          <image src='/images/songer/play.png'></image>
+        </view>
+        <view class='platTypeText'>
+          <text>  全部播放</text>
+        </view>
+        <view class='platTypeOrder'>
+          <image src='/images/songer/order.png'></image>
+        </view>
+      </view>
+      <view class='hr1'></view>
+
+      <scroll-view scroll-y="true" style='height:{{winHeight-50-50}}px;' bindscrolltolower='doGetMore'>
+        <view class='songList'>
+          <block wx:for='{{songerSong}}'>
+            <view data-songId='{{item.song_id}}' class="{{songId==item.song_id?'list-select':'list-normal'}}">
+              <view class='item-info'>
+                <view class='item-name' bindtap='gotoSong' data-song_id='{{item.song_id}}'>
+                  <text>{{item.title}}</text>
+                </view>
+                <view class='item-author'>
+                  <text>{{item.author}}  ({{item.language}})</text>
+                </view>
+              </view>
+              
+              <view class='item-play'>
+                <block wx:if='{{isPlat&&songId==item.song_id}}'>
+                  <image src='/images/songer/noplay.png' bindtap='stopPlay' data-song_id='{{item.song_id}}'></image>
+                </block>
+                <block wx:else>
+                  <image src='/images/songer/play2.png' bindtap='audioPlay' data-song_id='{{item.song_id}}'></image>
+                </block>
+              </view>
+              <view class='item-more' data-song_id='{{item.song_id}}'  bindtap='gotoSong'>
+                <image src='/images/songer/more.png'></image>
+              </view>
+            </view>
+            <view class='hr2'></view>
+          </block>
+        </view>
+      </scroll-view>
+    </swiper-item>
+
+
+
+    <swiper-item>
+      <view>专辑内容</view>
+    </swiper-item>
+    <swiper-item>
+      <view>MV内容</view>
+    </swiper-item>
+
+
+    <swiper-item>
+      <scroll-view scroll-y="true" style='height:{{winHeight-50}}px;'>
+        <view class='detailInfo'>
+          <view class='infoTop'>
+            <view class='detailInfo-img'>
+              <image src='{{songerInfo.avatar_s180}}'></image>
+            </view>
+
+
+            <view class='detailInfo-right'>
+              <view class='right-top'>
+                <view class='detailInfo-right-name'>
+                  <text style='font-size: 22px;'>{{songerInfo.name}}</text>
+                </view>
+                <view class='detailInfo-right-country'>
+                  <text>{{songerInfo.country}}</text>
+                </view>
+              </view>
+              <view class='detailInfo-right-hot'>
+                <image src='/images/songer/hot.png' style='height:30px;width:30px'></image>
+                <text>{{songerInfo.hot}}</text>
+              </view>
+              <view class='detailInfo-right-birth'>
+                <text>{{songerInfo.birth}} ({{songerInfo.constellation}})</text>
+              </view>
+            </view>
+          </view>
+
+          <view class='infoCenter'>
+            <view class='detailInfo-like'>
+              <image src='/images/songer/likered.png'></image>
+              <text>关注ta</text>
+            </view>
+            <view class='detailInfo-play'>
+              <image src='/images/songer/playwhile.png'></image>
+              <text>播放热门歌曲</text>
+            </view>
+          </view>
+          <view class='hr2'></view>
+          <view class='infoBottom'>
+            <text>{{songerInfo.intro}}</text>
+          </view>
+        </view>
+      </scroll-view>
+    </swiper-item>
+  </swiper>
+</view>

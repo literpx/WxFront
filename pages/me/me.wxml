@@ -1,0 +1,95 @@
+<import src='../template/template.wxml' />
+<block wx:if='{{userInfo.nickName}}'>
+  <template is='meHead_isuser'  data="{{userInfo}}"/>
+</block>
+<block wx:else>
+  <template is='meHead_nouser' />
+</block>
+<view class='content'>
+  <view class='order'>
+    <view class='desc' bindtap='goToLately'>
+      <view>
+        <image src='../../images/me/bofang.png' style='height:35px;width:32px'></image>
+      </view>
+      <view>播放列表</view>
+    </view>
+    <view class='desc'  bindtap='goLove'>
+      <view>
+        <image src='../../images/me/gedan.png' style='height:35px;width:32px'></image>
+      </view>
+      <view>收藏歌单</view>
+    </view>
+  </view>
+
+  <view class='clear'></view>
+  <view class='item'  bindtap='changePhone'>
+    <view class='icon'>
+      <image src='../../images/me/phone.png' style='width:22px;height:21px'></image>
+    </view>
+    <view class='itemName'>
+      <view>绑定手机</view>
+    </view>
+    <view class='right'>
+      <text class='opr'>*******{{userInfo.phone}}</text>
+    </view>
+  </view>
+  <view class='line'></view>
+
+  <view class='item'>
+    <view class='icon'>
+      <image src='../../images/me/yaoqing.png' style='width:22px;height:21px'></image>
+    </view>
+    <view class='itemName'>
+      <view>邀请好友</view>
+    </view>
+    <view class='right'>
+      <text class='opr-aaa'>发现好音乐</text>
+    </view>
+  </view>
+  <view class='hr'></view>
+  <view class='item'>
+    <view class='icon'>
+      <image src='../../images/me/message.png' style='width:22px;height:21px'></image>
+    </view>
+    <view class='itemName'>
+      <view>消息中心</view>
+    </view>
+
+    <view class='right'>
+      <text class='opr-aaa'>您有新的消息</text>
+    </view>
+  </view>
+  <view class='hr'></view>
+  <view class='item'>
+    <view class='icon'>
+      <image src='../../images/me/yijian.png' style='width:22px;height:21px'></image>
+    </view>
+    <view class='itemName'>
+      <view>产品建议</view>
+    </view>
+    <view class='right'>
+      <text class='opr-aaa'>在线服务</text>
+    </view>
+  </view>
+  <view class='hr'></view>
+  <view class='item'>
+    <view class='icon'>
+      <image src='../../images/me/more.png' style='width:22px;height:21px'></image>
+    </view>
+    <view class='itemName' bindtap='test'>
+      <view>更多</view>
+    </view>
+    <view class='right'>
+      <text class='opr-aaa'></text>
+    </view>
+  </view>
+ 
+<block wx:if='{{isLogin}}'>
+    <button style='width:80%;margin-top:40px;color:red' class='exitLogin' bindtap='exitLogin'>退出登录</button>
+</block>
+<block wx:else>
+    <button open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo" type='primary' style='width:80%;margin-top:40px;'>微信一键登录</button>
+</block>
+
+
+</view>

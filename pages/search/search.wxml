@@ -1,0 +1,99 @@
+<view class='search'>
+  <input type='text' value='{{searchText}}' bindblur='getSearchText'></input>
+  <view>
+    <image src="/images/index/search.png" bindtap='doSearch'></image>
+  </view>
+</view>
+
+
+<view class='nav'>
+  <view id="0" class="{{currentTab==0?'select':'normal'}}" bindtap='switchNav'>歌曲</view>
+  <view id="1" class="{{currentTab==1?'select':'normal'}}" bindtap='switchNav'>歌手</view>
+  <view id="2" class="{{currentTab==2?'select':'normal'}}" bindtap='switchNav'>专辑</view>
+</view>
+<swiper current='{{currentTab}}' bindchange='swiperChange' style='height:{{winHeight-50-50}}px'>
+  <swiper-item>
+    <scroll-view scroll-y="true" style='height:{{winHeight-50}}px;'>
+      <view class='songList'>
+        <block wx:for='{{song}}'>
+          <view data-songId='{{item.songid}}' class="{{songId==item.songid?'list-select':'list-normal'}}">
+            <view class='item-info'>
+              <view class='item-name'  data-song_id='{{item.songid}}' bindtap='gotoSong'>
+                <text>{{item.songname}}</text>
+              </view>
+              <view class='item-author'>
+                <text>{{item.artistname}}</text>
+              </view>
+            </view>
+            <view class='item-play'>
+              <block wx:if='{{isPlat&&songId==item.songid}}'>
+                <image src='/images/songer/noplay.png' bindtap='stopPlay' data-song_id='{{item.songid}}'></image>
+              </block>
+              <block wx:else>
+                <image src='/images/songer/play2.png' bindtap='audioPlay' data-song_id='{{item.songid}}'></image>
+              </block>
+
+            </view>
+            <view class='item-more' data-song_id='{{item.songid}}'  bindtap='gotoSong'>
+              <image src='/images/songer/more.png'></image>
+            </view>
+          </view>
+          <view class='hr2'></view>
+        </block>
+      </view>
+    </scroll-view>
+  </swiper-item>
+
+  <swiper-item>
+    <scroll-view scroll-y="true" style='height:{{winHeight-50}}px;'>
+      <view class='artist'>
+        <block wx:for='{{songerInfoList}}'>
+          <view class='artist-item' data-tinguid='{{item.artistid}}' bindtap='goToSonger'>
+            <view>
+              <image src='{{item.artistpic}}' style='height:70px;width:70px; border-radius: 35px'></image>
+            </view>
+            <view class='artist-item-author'>
+              <view style='font-size:18px'>
+                <text>歌手：{{item.artistname}}</text>
+              </view>
+              <view style='font-size:14px'>
+                <text>单曲：{{item.songs_total}}</text>
+                <text style='margin-left:15px;'>专辑：{{item.albums_total}}</text>
+              </view>
+              <view style='font-size:14px'>
+                <text>MV：{{item.mv_total}}</text>
+              </view>
+            </view>
+            <view class='artist-more'>></view>
+          </view>
+          <view class='hr2'></view>
+        </block>
+      </view>
+    </scroll-view>
+  </swiper-item>
+  <swiper-item>
+    <scroll-view scroll-y="true" style='height:{{winHeight-50}}px;'>
+      <view class='artist'>
+        <block wx:for='{{album}}'>
+          <view class='artist-item'>
+            <view>
+              <image src='{{item.artistpic}}' style='height:65px;width:65px;'></image>
+            </view>
+            <view class='artist-item-author'>
+              <view style='font-size:18px'>
+                <text>专辑：《{{item.albumname}}》</text>
+              </view>
+              <view style='font-size:16px'>
+                <text>歌手：{{item.artistname}}</text>
+              </view>
+            </view>
+            <view data-song_id='{{item.albumid}}'>
+              <image src='/images/songer/more.png' style='width:25px;height:30px'></image>
+            </view>
+          </view>
+          <view class='hr2'></view>
+        </block>
+      </view>
+    </scroll-view>
+  </swiper-item>
+</swiper>

@@ -1,0 +1,82 @@
+<view class='nav'>
+  <view id="0" class="{{currentTab==0?'select':'normal'}}" bindtap='switchNav'>我的收藏</view>
+  <view id="1" class="{{currentTab==1?'select':'normal'}}" bindtap='switchNav'>播放列表</view>
+</view>
+<swiper current='{{currentTab}}' bindchange='swiperChange' style='height:{{winHeight-45}}px'>
+  <swiper-item>
+  <block wx:if='{{isLogin}}'>
+    <scroll-view scroll-y="true" style='height:{{winHeight-45}}px;'>
+      <view class='songList'>
+        <block wx:for='{{loveSongList}}'>
+          <view data-songId='{{item.song_id}}' class="{{songId==item.song_id?'list-select':'list-normal'}}">
+            <view class='item-info'>
+              <view class='item-name' data-song_id='{{item.song_id}}' bindtap='gotoSong'>
+                <text>{{item.title}} </text>
+              </view>
+              <view class='item-author' data-author='{{item.ting_uid}}' bindtap='getAuthorSong'>
+                <text>{{item.author}}</text>
+              </view>
+            </view>
+            <view class='item-like'>
+              <image src='/images/songer/like.png' bindtap='cancleLike' data-song_id='{{item.song_id}}'></image>
+            </view>
+            <view class='item-play'>
+              <block wx:if='{{isPlat&&songId==item.song_id}}'>
+                <image src='/images/songer/noplay.png' bindtap='stopPlay' data-song_id='{{item.song_id}}'></image>
+              </block>
+              <block wx:else>
+                <image src='/images/songer/play2.png' bindtap='audioPlay' data-song_id='{{item.song_id}}'></image>
+              </block>
+
+            </view>
+            <view class='item-more'  data-song_id='{{item.song_id}}' bindtap='gotoSong'>
+              <image src='/images/songer/more.png'></image>
+            </view>
+          </view>
+          <view class='hr2'></view>
+        </block>
+      </view>
+      
+    </scroll-view>
+    </block>
+     <block wx:else>
+      <view class='noLogin'> 
+        <view><text>抱歉，您还没有登录！</text></view>
+        <view><button bindtap='gotoLogin' type='primary' style='width:70%'>前往登录</button></view>
+        <view><image src='/images/sorry.jpg' style='width:200px;height:200px'></image></view>
+        
+      </view>
+      </block>
+  </swiper-item>
+
+  <swiper-item>
+    <scroll-view scroll-y="true" style='height:{{winHeight-45}}px;'>
+      <view class='songList'>
+        <block wx:for='{{latelySongList}}'>
+          <view data-songId='{{item.song_id}}' class="{{songId==item.song_id?'list-select':'list-normal'}}">
+            <view class='item-info'>
+              <view class='item-name' data-song_id='{{item.song_id}}' bindtap='gotoSong'>
+                <text>{{item.title}}</text>
+              </view>
+              <view class='item-author'  data-author='{{item.ting_uid}}' bindtap='getAuthorSong'>
+                <text>{{item.author}}</text>
+              </view>
+            </view>
+            <view class='item-play' style='margin-left:20px;'>
+              <block wx:if='{{isPlat&&songId==item.song_id}}'>
+                <image src='/images/songer/noplay.png' bindtap='stopPlay' data-song_id='{{item.song_id}}'></image>
+              </block>
+              <block wx:else>
+                <image src='/images/songer/play2.png' bindtap='audioPlay' data-song_id='{{item.song_id}}'></image>
+              </block>
+            </view>
+            <view class='item-more' data-song_id='{{item.song_id}}' bindtap='gotoSong' style='margin-left:20px;'>
+              <image src='/images/songer/more.png'></image>
+            </view>
+          </view>
+          <view class='hr2'></view>
+        </block>
+      </view>
+    </scroll-view>
+  </swiper-item>
+</swiper>
